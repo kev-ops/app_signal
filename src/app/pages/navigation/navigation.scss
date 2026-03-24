@@ -1,0 +1,96 @@
+.navigation {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  height: 64px;
+  background: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+  .navigation-title {
+    position: absolute;
+    left: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #000000;
+    letter-spacing: -0.2px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .navigation-buttons {
+    position: absolute;
+    right: 176px;
+    top: 12px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+
+    .navigation-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 40px;
+      padding: 0 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+
+      &.navigation-button-more {
+        background: #eee;
+
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      &.navigation-button-share {
+        background: #000000;
+        color: #ffffff;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .navigation-avatar {
+    position: absolute;
+    left: 1288px;
+    top: 12px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    .avatar-image {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #f7f7f7;
+      object-fit: cover;
+    }
+
+    .chevron-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  @media (max-width: 1440px) {
+    .navigation-avatar {
+      left: auto;
+      right: 12px;
+    }
+
+    .navigation-buttons {
+      right: 80px;
+    }
+  }
+}
