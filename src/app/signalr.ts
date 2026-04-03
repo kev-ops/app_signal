@@ -5,32 +5,19 @@ import * as signalR from '@microsoft/signalr';
   providedIn: 'root'
 })
 export class Signalr {
-  private connection: signalR.HubConnection
+  private connection: signalR.HubConnection;
 
   constructor() {
-    this.connection
-      = new signalR.HubConnectionBuilder()
-        .withUrl("/chat")
-        .build();
+    this.connection = new signalR.HubConnectionBuilder().withUrl('/chat').build();
 
-        
-    this.connection.on("receiveMessage", msg => {
+    this.connection.on('receiveMessage', (msg) => {
       console.log(msg);
     });
-
-
   }
 
   onMessageReceived(callback: (chunk: string) => void) {
-    this.connection.on('MessageReceived', callback)
+    this.connection.on('MessageReceived', callback);
   }
-
-private test() {
-  this.onMessageReceived(chunk => {
-    const x = chunk;
-  })
-}
-  
 }
 
 
